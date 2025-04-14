@@ -26,5 +26,6 @@ jobs:
 
     - name: Rodar testes com Pytest
       run: |
-        export PYTHONPATH=$PYTHONPATH:$(pwd)/src
-        pytest
+        echo "Configurando PYTHONPATH"
+        export PYTHONPATH=$(pwd)/src:$PYTHONPATH
+        echo $PYTHONPATH  
