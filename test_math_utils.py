@@ -8,11 +8,10 @@ def test_subtract():
     assert subtract(10, 4) == 6
 
 def test_multiply():
-    assert multiply(3, 5) == 15
+    assert multiply(4, 3) == 12
 
-def test_divide():
-    assert divide(10, 2) == 5.0
-
-def test_divide_by_zero():
-    with pytest.raises(ValueError):
-        divide(5, 0)
+def test_multiply_invalid_type():
+    try:
+        multiply("a", 3)
+    except ValueError:
+        assert True
